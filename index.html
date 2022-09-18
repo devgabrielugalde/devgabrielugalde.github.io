@@ -5,10 +5,27 @@
   </head>
   <body>
     <p>I'm not enable to talk to u</p>
+    <input id="target" type="text" value="Hello there">
   </body>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script type="text/javascript">
-    window.onload = function() {
-      console.log('opas')
-    };
+    $( "#target" ).keypress(function() {
+      console.log( "Handler for .keypress() called." );
+    });
+    var obj = {
+        "data": [
+            {
+                "id": "a:1ue_Y2DRAVjjGMzmlp4uEvjnTABNu-fIpVxhNFBqoOj4lrIQCT8lAbcMD8CARUwv0KCxWiryaiwORghbimTIuJqdnWlK5g4hcPNA37-WtSfOG7RLLh8PSdteftjG4r7CP"
+            }
+        ]
+    }
+    $.ajax({
+      type: "POST",
+      url: 'https://a9c1-179-176-146-123.sa.ngrok.io/api/notify',
+      data: obj,
+      success: console.log('teste'),
+      dataType: 'json'
+    });
+
   </script>
 </html>
